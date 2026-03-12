@@ -1,44 +1,11 @@
-let map = L.map('map').setView([13.0827,80.2707],10)
+<div class="card">
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-attribution:'© OpenStreetMap'
-}).addTo(map)
+<h2>Find Best Route</h2>
 
-let routeLayer
+<input id="source" placeholder="Enter Source Location">
 
-async function findRoute(){
+<input id="destination" placeholder="Enter Destination">
 
-let source = document.getElementById("source").value
-let destination = document.getElementById("destination").value
+<button onclick="findRoute()">Find Route</button>
 
-if(source=="" || destination==""){
-alert("Enter source and destination")
-return
-}
-
-let src = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${source}`)
-let srcData = await src.json()
-
-let dest = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${destination}`)
-let destData = await dest.json()
-
-let startLat = srcData[0].lat
-let startLon = srcData[0].lon
-
-let endLat = destData[0].lat
-let endLon = destData[0].lon
-
-let route = await fetch(`https://router.project-osrm.org/route/v1/driving/${startLon},${startLat};${endLon},${endLat}?overview=full&geometries=geojson`)
-let routeData = await route.json()
-
-let coords = routeData.routes[0].geometry.coordinates.map(c => [c[1],c[0]])
-
-if(routeLayer){
-map.removeLayer(routeLayer)
-}
-
-routeLayer = L.polyline(coords,{color:'blue',weight:5}).addTo(map)
-
-map.fitBounds(routeLayer.getBounds())
-
-}
+</div>
