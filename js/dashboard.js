@@ -1,16 +1,19 @@
-const API="https://stms-backend.onrender.com"
+const API = "https://backend-stms.onrender.com"
 
 async function loadTraffic(){
 
-let res=await fetch(API+"/traffic")
+const res = await fetch(API + "/traffic")
 
-let data=await res.json()
+const data = await res.json()
 
-document.getElementById("roadA").innerText="Road A : "+data.roadA
+document.getElementById("roadA").innerText =
+"Road A : " + data.roadA
 
-document.getElementById("roadB").innerText="Road B : "+data.roadB
+document.getElementById("roadB").innerText =
+"Road B : " + data.roadB
 
-document.getElementById("roadC").innerText="Road C : "+data.roadC
+document.getElementById("roadC").innerText =
+"Road C : " + data.roadC
 
 }
 
