@@ -1,25 +1,28 @@
-const API="https://stms-backend.onrender.com"
+const API = "https://backend-stms.onrender.com"
 
 async function findRoute(){
 
-let from=document.getElementById("from").value
+const from = document.getElementById("from").value
+const to = document.getElementById("to").value
 
-let to=document.getElementById("to").value
+const res = await fetch(API + "/route",{
 
-let res=await fetch(API+"/route",{
-
-method:"POST",
+method: "POST",
 
 headers:{
 "Content-Type":"application/json"
 },
 
-body:JSON.stringify({from,to})
+body: JSON.stringify({
+from: from,
+to: to
+})
 
 })
 
-let data=await res.json()
+const data = await res.json()
 
-document.getElementById("result").innerText="Best Route: "+data.route
+document.getElementById("result").innerText =
+"Best Route: " + data.route
 
 }
