@@ -7,30 +7,33 @@
 <title>Route Finder</title>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
 <link rel="stylesheet" href="/css/style.css">
 
 </head>
 
 <body>
 
-<h1>Route Finder</h1>
+<h1>🧭 Route Finder</h1>
+
+<div class="menu">
+<a href="/index.html">Home</a>
+<a href="/dashboard.html">Dashboard</a>
+<a href="/map.html">Traffic Map</a>
+</div>
 
 <div class="card">
 
-<input id="source" placeholder="Enter Source">
+<h2>Find Best Route</h2>
 
-<br><br>
+<input id="source" placeholder="Enter Source Location">
 
 <input id="destination" placeholder="Enter Destination">
 
-<br><br>
-
 <button onclick="findRoute()">Find Route</button>
 
-</div>
+<p id="result"></p>
 
-<br>
+</div>
 
 <div id="map" style="height:500px;width:80%;margin:auto;"></div>
 
