@@ -1,29 +1,41 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
-
-<title>Find Route</title>
-
+<title>Route Finder</title>
 <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
 
-<h2>Find Best Route</h2>
+<h1>Route Finder</h1>
 
-<input id="from" placeholder="Start Location">
+<div class="menu">
 
-<input id="to" placeholder="Destination">
+<a href="index.html">Home</a>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="map.html">Traffic Map</a>
+
+</div>
+
+<div class="card">
+
+<input id="source" placeholder="Enter Source">
+
+<br><br>
+
+<input id="destination" placeholder="Enter Destination">
+
+<br><br>
 
 <button onclick="findRoute()">Find Route</button>
 
 <p id="result"></p>
 
-<br>
-
-<a href="index.html">Home</a>
+</div>
 
 <script src="js/route.js"></script>
 
