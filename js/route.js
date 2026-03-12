@@ -10,6 +10,7 @@ async function findRoute(){
 
 let source = document.getElementById("source").value
 let destination = document.getElementById("destination").value
+let mode = document.getElementById("mode").value
 
 if(source=="" || destination==""){
 alert("Enter source and destination")
@@ -40,5 +41,21 @@ map.removeLayer(routeLayer)
 routeLayer = L.polyline(coords,{color:'blue',weight:5}).addTo(map)
 
 map.fitBounds(routeLayer.getBounds())
+
+let distance = routeData.routes[0].distance / 1000
+
+let speed
+
+if(mode=="car") speed = 50
+if(mode=="bus") speed = 35
+if(mode=="train") speed = 80
+
+let time = distance / speed
+
+let minutes = Math.round(time * 60)
+
+document.getElementById("result").innerHTML =
+"Distance: " + distance.toFixed(2) + " km<br>" +
+"Estimated Time (" + mode + "): " + minutes + " minutes"
 
 }
