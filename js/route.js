@@ -1,28 +1,14 @@
-const API = "https://backend-stms.onrender.com"
+function findRoute(){
 
-async function findRoute(){
+let source = document.getElementById("source").value
+let destination = document.getElementById("destination").value
 
-const from = document.getElementById("from").value
-const to = document.getElementById("to").value
+if(source=="" || destination==""){
+alert("Please enter source and destination")
+return
+}
 
-const res = await fetch(API + "/route",{
-
-method: "POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body: JSON.stringify({
-from: from,
-to: to
-})
-
-})
-
-const data = await res.json()
-
-document.getElementById("result").innerText =
-"Best Route: " + data.route
+document.getElementById("result").innerHTML =
+"Best route from " + source + " to " + destination + " takes 20 minutes (Low Traffic)"
 
 }
