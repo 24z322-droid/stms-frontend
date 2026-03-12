@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Traffic Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>🚦 Smart Traffic Management System</h1>
+</header>
+
+<nav>
+<button onclick="showPage('dashboard')">Dashboard</button>
+<button onclick="showPage('map')">Traffic Map</button>
+<button onclick="showPage('route')">Find Route</button>
+<button onclick="showPage('report')">Traffic Report</button>
+<button onclick="showPage('admin')">Admin Panel</button>
+</nav>
+
+<div class="container">
+
+<section id="dashboard">
+<h2>Traffic Dashboard</h2>
+
+<div class="card green">Low Traffic</div>
+<div class="card yellow">Medium Traffic</div>
+<div class="card red">Heavy Traffic</div>
+
+</section>
+
+<section id="map" class="hidden">
+<h2>Traffic Map</h2>
+<p>Live traffic visualization (simulation)</p>
+
+<div class="map">
+<div class="road low">Road A - Low</div>
+<div class="road medium">Road B - Medium</div>
+<div class="road high">Road C - High</div>
+</div>
+
+</section>
+
+<section id="route" class="hidden">
+
+<h2>Find Best Route</h2>
+
+<input type="text" id="from" placeholder="From Location">
+<input type="text" id="to" placeholder="To Location">
+
+<button onclick="findRoute()">Find Route</button>
+
+<p id="routeResult"></p>
+
+</section>
+
+<section id="report" class="hidden">
+
+<h2>Traffic Report</h2>
+
+<ul id="reportList">
+<li>Road A : Low Traffic</li>
+<li>Road B : Medium Traffic</li>
+<li>Road C : Heavy Traffic</li>
+</ul>
+
+</section>
+
+<section id="admin" class="hidden">
+
+<h2>Admin Control</h2>
+
+<select id="trafficSelect">
+<option value="Low">Low Traffic</option>
+<option value="Medium">Medium Traffic</option>
+<option value="High">High Traffic</option>
+</select>
+
+<button onclick="updateTraffic()">Update Traffic</button>
+
+<p id="adminMsg"></p>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
