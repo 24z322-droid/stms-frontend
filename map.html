@@ -3,30 +3,34 @@
 <html>
 
 <head>
+
 <title>Traffic Map</title>
-<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<link rel="stylesheet" href="/css/style.css">
+
 </head>
 
 <body>
 
-<h1>Traffic Map</h1>
+<h1>Traffic Monitoring Map</h1>
 
 <div class="menu">
 
-<a href="index.html">Home</a>
+<a href="/index.html">Home</a>
 
-<a href="dashboard.html">Dashboard</a>
+<a href="/dashboard.html">Dashboard</a>
 
-<a href="route.html">Route Finder</a>
+<a href="/route.html">Route Finder</a>
 
 </div>
 
-<div class="card">
-<p>Traffic monitoring module.</p>
-<p>Here you can view congestion levels on city roads.</p>
-</div>
+<div id="map" style="height:500px;width:80%;margin:auto;"></div>
 
-<script src="js/map.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="/js/map.js"></script>
 
 </body>
 
