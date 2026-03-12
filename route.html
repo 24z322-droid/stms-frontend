@@ -3,23 +3,18 @@
 <html>
 
 <head>
+
 <title>Route Finder</title>
-<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<link rel="stylesheet" href="/css/style.css">
+
 </head>
 
 <body>
 
 <h1>Route Finder</h1>
-
-<div class="menu">
-
-<a href="index.html">Home</a>
-
-<a href="dashboard.html">Dashboard</a>
-
-<a href="map.html">Traffic Map</a>
-
-</div>
 
 <div class="card">
 
@@ -33,11 +28,15 @@
 
 <button onclick="findRoute()">Find Route</button>
 
-<p id="result"></p>
-
 </div>
 
-<script src="js/route.js"></script>
+<br>
+
+<div id="map" style="height:500px;width:80%;margin:auto;"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="/js/route.js"></script>
 
 </body>
 
